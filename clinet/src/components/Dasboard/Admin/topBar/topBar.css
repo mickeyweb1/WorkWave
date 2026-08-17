@@ -1,0 +1,788 @@
+/* =========================================================
+   ADMIN TOP BAR
+   ========================================================= */
+
+.admin-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  width: 100%;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.topbar-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.sidebar-toggle-btn {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  color: #64748b;
+  background: transparent;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.sidebar-toggle-btn:active {
+  transform: scale(0.96);
+}
+
+.topbar-page-title {
+  min-width: 0;
+
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.2;
+  letter-spacing: -0.25px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+   ========================================================= */
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-btn {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #64748b;
+  background: transparent;
+
+  border: none;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.notification-btn:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.notification-btn:active {
+  transform: scale(0.96);
+}
+
+.notification-badge {
+  position: absolute;
+
+  top: 3px;
+  right: 3px;
+
+  min-width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  color: #ffffff;
+  background: #ef4444;
+
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   NOTIFICATION DROPDOWN
+   ========================================================= */
+
+.notification-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 350px;
+  max-width: calc(100vw - 24px);
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.13),
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  animation: dropdownEnter 0.16s ease-out;
+}
+
+@keyframes dropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Notification Header */
+
+.notification-header {
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 16px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.notification-header > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.notification-header h3 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.notification-header span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.notification-header > svg {
+  color: #64748b;
+}
+
+
+/* Notification List */
+
+.notification-list {
+  max-height: 320px;
+
+  overflow-y: auto;
+}
+
+.notification-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.notification-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+
+/* Notification Item */
+
+.notification-item {
+  position: relative;
+
+  display: flex;
+
+  gap: 11px;
+
+  padding: 13px 16px;
+
+  border-bottom: 1px solid #f8fafc;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background: #f8fafc;
+}
+
+.notification-item.unread {
+  background: #eff6ff;
+}
+
+.notification-item.unread:hover {
+  background: #eaf2ff;
+}
+
+
+/* Notification Dot */
+
+.notification-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  background: transparent;
+
+  border-radius: 50%;
+}
+
+.notification-item.unread .notification-dot {
+  background: #2563eb;
+}
+
+
+/* Notification Content */
+
+.notification-content {
+  min-width: 0;
+}
+
+.notification-title {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.notification-item.read .notification-title {
+  font-weight: 500;
+}
+
+.notification-message {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.notification-time {
+  margin: 5px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+
+/* Empty Notifications */
+
+.empty-notifications {
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px 16px;
+
+  text-align: center;
+}
+
+.empty-notifications svg {
+  margin-bottom: 10px;
+
+  color: #cbd5e1;
+}
+
+.empty-notifications p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.empty-notifications span {
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 4px 7px 4px 4px;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease;
+}
+
+.profile-btn:hover {
+  background: #f8fafc;
+}
+
+.profile-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* Avatar */
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  background: #2563eb;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* Profile Name */
+
+.profile-name {
+  max-width: 130px;
+
+  overflow: hidden;
+
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* Chevron */
+
+.profile-chevron {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.profile-chevron.open {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+   ========================================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 220px;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.13),
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  animation: dropdownEnter 0.16s ease-out;
+}
+
+
+/* Profile Dropdown Header */
+
+.profile-dropdown-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 8px 11px;
+}
+
+.profile-dropdown-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+  background: #2563eb;
+
+  border-radius: 50%;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profile-dropdown-header > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.profile-dropdown-header strong {
+  color: #0f172a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.profile-dropdown-header span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* Divider */
+
+.profile-dropdown-divider {
+  height: 1px;
+
+  margin: 3px 0 6px;
+
+  background: #f1f5f9;
+}
+
+
+/* Dropdown Buttons */
+
+.dropdown-btn {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 9px;
+
+  color: #334155;
+  background: transparent;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.dropdown-btn:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.dropdown-btn svg {
+  flex-shrink: 0;
+}
+
+.logout-btn {
+  color: #ef4444;
+}
+
+.logout-btn:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-topbar {
+    padding: 0 18px;
+  }
+
+  .topbar-left {
+    gap: 10px;
+  }
+
+  .topbar-page-title {
+    font-size: 16px;
+  }
+
+  .topbar-right {
+    gap: 6px;
+  }
+
+  .profile-name {
+    max-width: 100px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .admin-topbar {
+    height: 60px;
+
+    padding: 0 12px;
+  }
+
+  .topbar-left {
+    gap: 7px;
+  }
+
+  .sidebar-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .topbar-page-title {
+    max-width: 150px;
+
+    font-size: 15px;
+  }
+
+  .topbar-right {
+    gap: 2px;
+  }
+
+  .notification-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile-btn {
+    padding: 2px;
+  }
+
+  .profile-name,
+  .profile-chevron {
+    display: none;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* Notification Dropdown */
+
+  .notification-dropdown {
+    position: fixed;
+
+    top: 66px;
+    left: 12px;
+    right: 12px;
+
+    width: auto;
+    max-width: none;
+  }
+
+  .notification-list {
+    max-height: 55vh;
+  }
+
+
+  /* Profile Dropdown */
+
+  .profile-dropdown {
+    top: calc(100% + 8px);
+
+    right: 0;
+
+    width: 210px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .admin-topbar {
+    padding: 0 9px;
+  }
+
+  .topbar-page-title {
+    max-width: 110px;
+  }
+
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .notification-btn,
+  .sidebar-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .notification-dropdown {
+    left: 8px;
+    right: 8px;
+  }
+}

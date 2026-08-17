@@ -1,0 +1,330 @@
+/* =========================================
+   ADMIN REPORTS & ANALYTICS STYLES
+   ========================================= */
+
+.reports-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- HEADER --- */
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.reports-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.reports-header p {
+  color: #64748b;
+  margin: 0;
+}
+
+.export-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-btn.primary {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+}
+
+.export-btn.primary:hover {
+  background-color: #1e293b;
+}
+
+.export-btn.secondary {
+  background-color: white;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.export-btn.secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* --- PERIOD FILTER --- */
+.period-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0 12px;
+  width: fit-content;
+}
+
+.filter-icon { color: #94a3b8; }
+
+.period-filter select {
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #0f172a;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+}
+
+/* --- P&L SUMMARY CARDS --- */
+.pl-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.pl-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.pl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.04);
+}
+
+.pl-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.pl-title {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pl-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-blue { background-color: #dbeafe; color: #2563eb; }
+.bg-red { background-color: #fee2e2; color: #dc2626; }
+.bg-green { background-color: #dcfce7; color: #16a34a; }
+.bg-purple { background-color: #f3e8ff; color: #9333ea; }
+
+.pl-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.pl-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.trend-up { color: #16a34a; }
+.trend-down { color: #dc2626; }
+
+/* --- REPORT PANELS --- */
+.report-panel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.panel-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.view-all-link {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-all-link:hover { text-decoration: underline; }
+
+.chart-container-large {
+  width: 100%;
+  height: 350px;
+}
+
+/* --- TWO COLUMN GRID --- */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Give table slightly more space */
+  gap: 24px;
+}
+
+/* Simple Data Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.simple-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.simple-data-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.simple-data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.simple-data-table tr:last-child td { border-bottom: none; }
+.simple-data-table tr:hover td { background-color: #f8fafc; }
+
+.font-bold { font-weight: 700; color: #0f172a; }
+.font-medium { font-weight: 500; color: #0f172a; }
+.font-semibold { font-weight: 600; }
+
+.growth-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.growth-positive { background-color: #dcfce7; color: #16a34a; }
+.growth-negative { background-color: #fee2e2; color: #dc2626; }
+
+/* Insights Panel */
+.insights-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-icon { color: #3b82f6; }
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.insight-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  border-left: 4px solid transparent;
+}
+
+.insight-item.positive { border-left-color: #16a34a; }
+.insight-item.warning { border-left-color: #f59e0b; }
+
+.insight-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.positive .insight-dot { background-color: #16a34a; }
+.warning .insight-dot { background-color: #f59e0b; }
+
+.insight-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.insight-item p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .reports-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .export-actions {
+    width: 100%;
+  }
+  
+  .export-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

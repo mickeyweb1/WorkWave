@@ -1,0 +1,39 @@
+/* Roll Tracking Sections */
+.records-section {
+  margin-bottom: 24px;
+}
+
+.records-section-header {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-production.bulk {
+  background: #7c3aed;
+}
+
+.btn-production.bulk:hover {
+  background: #6d28d9;
+}
+
+.sold-row {
+  opacity: 0.7;
+}
+
+.sold-row:hover {
+  opacity: 1;
+}
+
+.bulk-modal {
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+}

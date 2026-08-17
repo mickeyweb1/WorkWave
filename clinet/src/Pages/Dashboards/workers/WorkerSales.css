@@ -1,0 +1,124 @@
+/* Daily Grouping for Sales (Green Theme) */
+.ws-day-group {
+  margin-bottom: 24px;
+}
+
+.ws-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f0fdf4; /* Light green background */
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 4px solid #16a34a; /* Green border */
+}
+
+.ws-day-date {
+  font-weight: 700;
+  font-size: 14px;
+  color: #14532d;
+}
+
+.ws-day-summary {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ws-day-total {
+  font-size: 14px;
+  color: #166534;
+}
+
+.ws-day-total strong {
+  color: #16a34a; /* Green text */
+  font-size: 16px;
+}
+
+.ws-day-qty {
+  font-size: 12px;
+  color: #4ade80;
+  background: #dcfce7;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.ws-day-records {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ws-record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.ws-record-row:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.ws-record-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ws-record-info strong {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.ws-record-note {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ws-record-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ws-payment-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #dbeafe;
+  color: #1e40af;
+  text-transform: uppercase;
+}
+
+.ws-record-amount {
+  font-weight: 700;
+  color: #16a34a; /* Green for money IN */
+  font-size: 16px;
+}
+
+.ws-empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
+  background: white;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+}
+
+/* Spinner animation */
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

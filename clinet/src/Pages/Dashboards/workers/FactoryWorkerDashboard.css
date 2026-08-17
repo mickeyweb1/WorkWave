@@ -1,0 +1,176 @@
+.fw-dashboard {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f1f5f9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fw-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fw-header h1 { font-size: 24px; color: #0f172a; margin: 0; }
+.fw-header p { color: #64748b; margin: 4px 0 0; font-size: 14px; }
+
+.fw-big-btn {
+  width: 100%;
+  padding: 22px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+  margin-bottom: 28px;
+  transition: transform 0.2s;
+}
+.fw-big-btn:active { transform: scale(0.98); }
+
+.fw-section { margin-bottom: 28px; }
+.fw-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fw-empty { text-align: center; color: #94a3b8; padding: 20px 0; font-size: 14px; }
+
+/* Task Cards */
+.fw-task-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.fw-task-info h3 { font-size: 15px; margin: 0 0 4px; color: #0f172a; }
+.fw-task-info p { font-size: 13px; color: #64748b; margin: 0; }
+.fw-task-notes { font-size: 12px; color: #94a3b8; margin-top: 4px; font-style: italic; }
+
+.fw-task-btn {
+  padding: 10px 20px;
+  background: #f59e0b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.fw-task-btn:hover { background: #d97706; }
+
+/* Submission Cards */
+.fw-submission-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.fw-sub-icon {
+  background: #eff6ff;
+  color: #2563eb;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fw-sub-info { flex: 1; }
+.fw-sub-info h3 { font-size: 14px; margin: 0 0 2px; color: #0f172a; }
+.fw-sub-info p { font-size: 12px; color: #64748b; margin: 0; }
+
+.fw-sub-status { text-align: right; }
+.fw-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.fw-status.pending { background: #fef3c7; color: #b45309; }
+.fw-status.approved { background: #d1fae5; color: #065f46; }
+.fw-sub-status small { display: block; font-size: 10px; color: #94a3b8; margin-top: 4px; }
+
+/* Modal */
+.fw-modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; padding: 20px;
+}
+.fw-modal {
+  background: white; padding: 24px; border-radius: 16px;
+  width: 100%; max-width: 420px; max-height: 90vh; overflow-y: auto;
+}
+.fw-modal h2 { margin: 0 0 16px; font-size: 20px; color: #0f172a; }
+
+.fw-task-context {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  color: #92400e;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.fw-form-group { margin-bottom: 14px; }
+.fw-form-group label { display: block; font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 6px; }
+.fw-form-group input, .fw-form-group select {
+  width: 100%; padding: 12px; border: 1px solid #cbd5e1;
+  border-radius: 8px; font-size: 16px; box-sizing: border-box;
+}
+.fw-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.fw-shift-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fw-shift-option {
+  padding: 12px; border: 2px solid #e2e8f0; background: white;
+  border-radius: 8px; font-weight: 600; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;
+}
+.fw-shift-option.active { border-color: #2563eb; background: #eff6ff; color: #2563eb; }
+
+.fw-modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+.fw-btn-cancel {
+  flex: 1; padding: 14px; background: #f1f5f9; border: none;
+  border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer;
+}
+.fw-btn-save {
+  flex: 1; padding: 14px; background: #10b981; color: white;
+  border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer;
+}
+.fw-btn-save:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.fw-loading { display: flex; justify-content: center; padding: 100px 0; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

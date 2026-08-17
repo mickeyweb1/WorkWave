@@ -1,0 +1,108 @@
+/* =========================================================
+   ADMIN LAYOUT
+   ========================================================= */
+
+.admin-main-area {
+  min-height: 100vh;
+  margin-left: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8fafc;
+
+  transition: margin-left 0.25s ease;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.admin-page-content {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR OVERLAY
+   ========================================================= */
+
+.mobile-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 90;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+
+  backdrop-filter: blur(2px);
+}
+
+
+.mobile-sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-main-area {
+    margin-left: 235px;
+  }
+
+  .admin-page-content {
+    padding: 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-main-area {
+    margin-left: 0;
+  }
+
+  .admin-page-content {
+    min-height: calc(100vh - 60px);
+
+    padding: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .admin-page-content {
+    padding: 12px;
+  }
+}

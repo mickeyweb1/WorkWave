@@ -1,0 +1,335 @@
+.dr-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.dr-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  gap: 12px;
+  color: #64748b;
+}
+
+/* Header */
+.dr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dr-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.dr-subtitle {
+  color: #64748b;
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.dr-date-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.dr-date-picker input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Date Banner */
+.dr-date-banner {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #1e40af;
+  margin-bottom: 24px;
+}
+
+/* Summary Cards */
+.dr-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dr-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dr-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dr-card-revenue .dr-card-icon { background: #ecfdf5; color: #10b981; }
+.dr-card-expenses .dr-card-icon { background: #fef2f2; color: #ef4444; }
+.dr-card-profit .dr-card-icon { background: #ecfdf5; color: #10b981; }
+.dr-card-loss .dr-card-icon { background: #fef2f2; color: #ef4444; }
+.dr-card-production .dr-card-icon { background: #fffbeb; color: #f59e0b; }
+
+.dr-card-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.dr-card-info h3 {
+  margin: 4px 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.dr-card-revenue .dr-card-info h3 { color: #10b981; }
+.dr-card-expenses .dr-card-info h3 { color: #ef4444; }
+.dr-card-profit .dr-card-info h3 { color: #10b981; }
+.dr-card-loss .dr-card-info h3 { color: #ef4444; }
+.dr-card-production .dr-card-info h3 { color: #f59e0b; }
+
+.dr-card-info span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Sections */
+.dr-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.dr-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+/* Payment Grid */
+.dr-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.dr-payment-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.dr-payment-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.dr-payment-item strong {
+  font-size: 16px;
+  color: #0f172a;
+}
+
+/* Two Columns */
+.dr-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .dr-two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* List Items */
+.dr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dr-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}
+
+.dr-list-rank {
+  width: 28px;
+  height: 28px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.dr-list-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.dr-list-category {
+  font-size: 12px;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.dr-list-value {
+  font-weight: 700;
+  font-size: 14px;
+  color: #10b981;
+}
+
+.dr-list-value.expense {
+  color: #ef4444;
+}
+
+.dr-empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   🖨️ PRINT STYLES
+   ========================================== */
+
+/* The Print Button Style */
+.dr-print-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dr-print-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+/* --- PRINT MEDIA QUERY --- */
+@media print {
+  /* 1. Hide Navigation & UI Elements */
+  .sidebar, .admin-topbar, .topbar, .dr-no-print, nav, header {
+    display: none !important;
+  }
+
+  /* 2. Reset Layout for Paper */
+  body, html, #root {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .dr-page {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 3. Clean up Cards & Shadows */
+  .dr-card, .dr-section {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    break-inside: avoid; /* Prevents cards from being cut in half */
+    margin-bottom: 15px !important;
+  }
+
+  /* 4. Force Colors to Print (Important for badges/icons) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 5. Adjust Grid for Paper (Stack columns if needed) */
+  .dr-summary-grid {
+    grid-template-columns: 1fr 1fr !important; /* 2 cards per row on paper */
+  }
+
+  .dr-two-columns {
+    display: block !important; /* Stack the two columns */
+  }
+  
+  .dr-two-columns > div {
+    margin-bottom: 20px;
+  }
+
+  /* 6. Hide Scrollbars */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

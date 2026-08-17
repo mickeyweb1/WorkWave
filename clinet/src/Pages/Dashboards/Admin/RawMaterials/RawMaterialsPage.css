@@ -1,0 +1,129 @@
+.rm-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.rm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.rm-title { font-size: 28px; font-weight: 800; color: #0f172a; margin: 0; }
+.rm-subtitle { color: #64748b; font-size: 15px; margin: 4px 0 0; }
+
+.rm-add-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: #8b5cf6; /* Purple for raw materials */
+  color: white; border: none; padding: 12px 20px;
+  border-radius: 10px; font-weight: 600; font-size: 14px;
+  cursor: pointer; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+  transition: all 0.2s ease;
+}
+.rm-add-btn:hover { background: #7c3aed; transform: translateY(-2px); }
+
+.rm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.rm-empty {
+  grid-column: 1 / -1; text-align: center; padding: 80px 20px;
+  color: #94a3b8; background: white; border: 2px dashed #e2e8f0; border-radius: 16px;
+}
+.rm-empty h3 { color: #475569; margin: 16px 0 4px; }
+
+.rm-card {
+  background: white; border: 1px solid #e2e8f0; border-radius: 16px;
+  padding: 24px; display: flex; flex-direction: column;
+  transition: all 0.25s ease;
+}
+.rm-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+.rm-card.low-stock { border-color: #fca5a5; background: #fff5f5; }
+
+.rm-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+
+.rm-icon {
+  width: 48px; height: 48px; background: #f3e8ff; color: #8b5cf6;
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+}
+.rm-card.low-stock .rm-icon { background: #fee2e2; color: #ef4444; }
+
+.rm-warning-badge {
+  display: flex; align-items: center; gap: 4px; background: #ef4444; color: white;
+  padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 700;
+}
+
+.rm-name { font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px; }
+.rm-stock { font-size: 14px; color: #64748b; margin: 0 0 20px; }
+.rm-stock-number { font-size: 28px; font-weight: 800; color: #0f172a; margin-right: 4px; }
+.rm-card.low-stock .rm-stock-number { color: #ef4444; }
+
+.rm-delivery-btn {
+  margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 12px; background: #10b981; color: white; border: none;
+  border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s;
+}
+.rm-delivery-btn:hover { background: #059669; }
+
+.modal-context {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 12px; font-size: 14px; color: #475569; margin-bottom: 20px;
+}
+
+.btn-delivery-save { background: #10b981; }
+.btn-delivery-save:hover { background: #059669; }
+
+.rm-loading { display: flex; justify-content: center; align-items: center; min-height: 400px; }
+
+@media (max-width: 600px) {
+  .rm-header { flex-direction: column; gap: 16px; }
+  .rm-add-btn { width: 100%; justify-content: center; }
+}
+
+
+/* Low-stock summary banner */
+.rm-summary-banner {
+  display: flex; align-items: center; gap: 8px;
+  background: #fef2f2; border: 1px solid #fca5a5; color: #b91c1c;
+  padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 600;
+  margin-bottom: 20px;
+}
+.rm-summary-link {
+  margin-left: auto; background: none; border: none; color: #b91c1c;
+  font-weight: 700; text-decoration: underline; cursor: pointer; font-size: 13px;
+}
+
+/* Search + filter toolbar */
+.rm-toolbar {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.rm-search {
+  display: flex; align-items: center; gap: 8px;
+  background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+  padding: 10px 14px; flex: 1; min-width: 220px; color: #94a3b8;
+}
+.rm-search input {
+  border: none; outline: none; flex: 1; font-size: 14px; color: #0f172a;
+}
+.rm-search-clear {
+  background: none; border: none; cursor: pointer; color: #94a3b8; display: flex;
+}
+.rm-filter-toggle {
+  display: flex; align-items: center; gap: 6px; font-size: 14px; color: #475569;
+  cursor: pointer; white-space: nowrap;
+}
+
+/* Inline form errors */
+.rm-form-error {
+  background: #fef2f2; border: 1px solid #fca5a5; color: #b91c1c;
+  padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 16px;
+}
+
+/* Field hint text */
+.rm-hint {
+  display: block; font-size: 12px; color: #94a3b8; margin-top: 4px;
+}

@@ -1,0 +1,561 @@
+/* =========================================================
+   ADMIN SIDEBAR
+   ========================================================= */
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: 100;
+
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  padding: 22px 14px 16px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #0f172a;
+  color: #cbd5e1;
+
+  border-right: 1px solid #1e293b;
+
+  transition:
+    width 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+.admin-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 20px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER / LOGO AREA
+   ========================================================= */
+
+/*
+  The JSX currently has:
+
+  WorkWave
+  Admin Workspace
+
+  as plain text directly inside the sidebar.
+
+  Because there is no wrapper around them, both inherit
+  this typography.
+*/
+
+.admin-sidebar {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.sidebar-section {
+  margin-top: 26px;
+}
+
+.sidebar-section:first-of-type {
+  margin-top: 32px;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.section-title {
+  margin: 0 10px 9px;
+
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.nav-link {
+  position: relative;
+
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  gap: 12px;
+
+  margin: 3px 0;
+
+  padding: 10px 11px;
+
+  color: #94a3b8;
+  background: transparent;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+
+/* Icon */
+
+.nav-link svg {
+  width: 19px;
+  height: 19px;
+
+  flex-shrink: 0;
+
+  stroke-width: 1.8;
+}
+
+
+/* Text */
+
+.nav-text {
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+  color: #f8fafc;
+  background: #1e293b;
+}
+
+
+/* Active */
+
+.nav-link.active {
+  color: #ffffff;
+  background: #1d4ed8;
+
+  font-weight: 600;
+}
+
+.nav-link.active:hover {
+  background: #2563eb;
+}
+
+
+/* Active indicator */
+
+.nav-link.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 3px;
+
+  background: #ffffff;
+
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================================================
+   UPGRADE AREA
+   ========================================================= */
+
+.sidebar-upgrade {
+  margin-top: auto;
+
+  padding-top: 22px;
+}
+
+
+.upgrade-card {
+  box-sizing: border-box;
+
+  padding: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #172554,
+      #1e3a8a
+    );
+
+  border: 1px solid #1e40af;
+
+  border-radius: 11px;
+}
+
+
+.upgrade-card h4 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.upgrade-card p {
+  margin: 6px 0 12px;
+
+  color: #bfdbfe;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+
+/* Upgrade button */
+
+.upgrade-btn {
+  width: 100%;
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 8px 10px;
+
+  color: #1e3a8a;
+  background: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.upgrade-btn:hover {
+  background: #eff6ff;
+}
+
+
+.upgrade-btn:active {
+  transform: scale(0.98);
+}
+
+
+.upgrade-btn svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+   ========================================================= */
+
+.admin-sidebar.collapsed {
+  width: 72px;
+}
+
+
+/*
+  Hide text when collapsed.
+*/
+
+.admin-sidebar.collapsed .nav-text,
+.admin-sidebar.collapsed .section-title,
+.admin-sidebar.collapsed .upgrade-card {
+  display: none;
+}
+
+
+/*
+  Center nav icons.
+*/
+
+.admin-sidebar.collapsed .nav-link {
+  justify-content: center;
+
+  gap: 0;
+
+  padding: 10px;
+}
+
+
+/*
+  Remove active indicator positioning from
+  the collapsed version.
+*/
+
+.admin-sidebar.collapsed .nav-link.active::before {
+  left: 0;
+}
+
+
+/*
+  Section spacing in collapsed mode.
+*/
+
+.admin-sidebar.collapsed .sidebar-section {
+  margin-top: 22px;
+}
+
+
+/*
+  Upgrade container should not consume
+  unnecessary space.
+*/
+
+.admin-sidebar.collapsed .sidebar-upgrade {
+  display: none;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.admin-main-area {
+  min-height: 100vh;
+
+  margin-left: 250px;
+
+  background: #f8fafc;
+
+  transition:
+    margin-left 0.25s ease;
+}
+
+
+/*
+  When the sidebar is collapsed, the main
+  content gets more horizontal space.
+
+  This relies on the sidebar being the previous
+  sibling of .admin-main-area.
+*/
+
+.admin-sidebar.collapsed
+  ~ .admin-main-area {
+  margin-left: 72px;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.admin-page-content {
+  box-sizing: border-box;
+
+  width: 100%;
+
+  min-height: calc(100vh - 64px);
+
+  padding: 24px;
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+   ========================================================= */
+
+.mobile-sidebar-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 90;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+.mobile-sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .admin-sidebar {
+    width: 235px;
+  }
+
+  .admin-sidebar.collapsed {
+    width: 72px;
+  }
+
+  .admin-main-area {
+    margin-left: 235px;
+  }
+
+  .admin-sidebar.collapsed
+    ~ .admin-main-area {
+    margin-left: 72px;
+  }
+
+  .admin-page-content {
+    padding: 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-sidebar {
+    width: 250px;
+
+    transform: translateX(0);
+
+    box-shadow:
+      10px 0 30px rgba(15, 23, 42, 0.18);
+  }
+
+
+  /*
+    On mobile, "collapsed" means completely
+    hidden rather than becoming a 72px sidebar.
+  */
+
+  .admin-sidebar.collapsed {
+    width: 250px;
+
+    transform: translateX(-100%);
+  }
+
+
+  .admin-main-area,
+  .admin-sidebar.collapsed
+    ~ .admin-main-area {
+    margin-left: 0;
+  }
+
+
+  .admin-page-content {
+    min-height: calc(100vh - 60px);
+
+    padding: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .admin-sidebar {
+    width: 260px;
+  }
+
+  .admin-sidebar.collapsed {
+    width: 260px;
+  }
+
+  .admin-page-content {
+    padding: 12px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+
+    font-size: 13px;
+  }
+
+  .section-title {
+    margin-left: 9px;
+  }
+
+  .upgrade-card {
+    padding: 13px;
+  }
+}

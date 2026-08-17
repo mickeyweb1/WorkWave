@@ -1,0 +1,424 @@
+.md-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.md-loading { display: flex; justify-content: center; padding: 100px 0; }
+
+/* Toast */
+.md-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #10b981;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Header */
+.md-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.md-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.2s;
+}
+
+.md-back-btn:hover { background: #f1f5f9; }
+
+.md-header-info { flex: 1; }
+.md-title { font-size: 24px; margin: 0; }
+.md-stock { margin: 4px 0 0; color: #64748b; font-size: 14px; }
+
+/* Batch Button */
+.md-batch-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.md-batch-btn:hover { background: #7c3aed; }
+
+/* Batch Panel */
+.md-batch-panel {
+  background: white;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.md-batch-form {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.md-batch-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.md-batch-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.md-batch-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.md-batch-field input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.md-batch-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.md-batch-generate {
+  padding: 10px 20px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.md-batch-generate:hover { background: #7c3aed; }
+
+.md-batch-cancel {
+  padding: 10px 20px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.md-batch-cancel:hover { background: #e2e8f0; }
+
+/* Table */
+.md-table-wrapper {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.md-table th {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.md-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.md-existing-row:hover { background: #f8fafc; }
+
+.md-type-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.md-type-badge.in { background: #d1fae5; color: #065f46; }
+.md-type-badge.out { background: #fee2e2; color: #991b1b; }
+
+.md-qty { font-weight: 700; }
+
+.md-date-cell {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.md-auto-date {
+  color: #94a3b8;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Input Rows */
+.md-input-row { background: #fefce8; }
+.md-input-row:hover { background: #fef9c3; }
+
+.md-cell-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+}
+
+.md-cell-input:focus {
+  border-color: #8b5cf6;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+}
+
+/* Toggle */
+.md-toggle-sm {
+  display: flex;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.md-toggle-btn-sm {
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.2s;
+}
+
+.md-toggle-btn-sm.active-in { background: #10b981; color: white; }
+.md-toggle-btn-sm.active-out { background: #ef4444; color: white; }
+
+/* Row Actions */
+.md-row-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.md-save-btn {
+  padding: 8px 14px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.md-save-btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.md-save-btn:not(:disabled):hover { background: #7c3aed; }
+
+.md-remove-btn {
+  padding: 6px 8px;
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.md-remove-btn:hover { background: #fecaca; }
+
+@media (max-width: 768px) {
+  .md-table { min-width: 700px; }
+  .md-header { flex-wrap: wrap; }
+  .md-batch-form { flex-direction: column; }
+}
+
+/* Add these to your existing CSS file */
+
+/* Batch Panel */
+.md-batch-panel {
+  background: white;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.md-batch-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px;
+}
+
+.md-batch-template-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #fefce8;
+  border-radius: 8px;
+}
+
+.md-batch-cell {
+  display: flex;
+  align-items: center;
+}
+
+.md-batch-actions {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.md-batch-field {
+  flex: 1;
+  min-width: 150px;
+}
+
+.md-batch-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.md-batch-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.md-batch-field input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.md-batch-generate {
+  padding: 10px 24px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.md-batch-generate:hover { background: #7c3aed; }
+
+.md-batch-cancel {
+  padding: 10px 20px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.md-batch-cancel:hover { background: #e2e8f0; }
+
+@media (max-width: 768px) {
+  .md-batch-template-row {
+    grid-template-columns: 1fr;
+  }
+  .md-batch-actions {
+    flex-direction: column;
+  }
+}
+
+/* Header Actions Container */
+.md-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Admin Delete Button Style */
+.md-delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fee2e2;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.md-delete-btn:hover { 
+  background: #ef4444; 
+  color: white; 
+  border-color: #ef4444;
+}
